@@ -1,0 +1,16 @@
+version: '3'
+services:
+        kanchan-con1:
+                image: "nginx:latest"
+                ports: 
+                      - "90:80"
+
+        con2-jenkins:
+                image: "jenkinsci/jenkins"
+                ports:
+                      - "8080:8080"
+
+        Kan-con3:
+                image: "nginx"
+                ports:
+                      - "100:80"

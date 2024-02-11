@@ -1,0 +1,9 @@
+FROM ubuntu
+VOLUME ["/cloudData"]
+RUN echo "edited by run echoo command in Dockerfile redirected to tmp and a kanchandata filed" > /tmp/kanchanData
+COPY data /tmp
+RUN apt-get update -y
+RUN apt-get install git -y
+RUN apt-get install apache2 -y
+RUN systemctl restart apache2
+docker build -t kanchan19042002/cloudImage

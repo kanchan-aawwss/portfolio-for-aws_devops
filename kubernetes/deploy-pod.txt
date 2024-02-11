@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: single-pod-container
+  labels:
+    env: india
+
+spec:
+  containers:
+    - name: con1
+      image: nginx

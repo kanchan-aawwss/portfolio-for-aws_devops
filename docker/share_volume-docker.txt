@@ -1,0 +1,19 @@
+sudo hostname docker-engine
+sudo su -
+
+yum install docker -y
+
+systemctl enable docker
+systemctl start docker
+systemctl restart docker
+systemctl status docker
+
+docker run -i -d --name con1 -v /home/ec2-user:/kanchanvol1 --privileged=true ubuntu
+docker run -i -d --name con2 -v /home/ec2-user:/kanchanvol2 --privileged=true ubuntu
+
+docker run -i -d --name con2 privileged=true --volumes-from con1 ubuntu
+
+docker exec -it con1 bin/bash
+ls
+cd/kanchanvol1
+ls

@@ -1,0 +1,19 @@
+sudo su -
+yum install docker -y
+systemctl enable docker
+systemctl start docker
+systemctl restart docker
+systemctl status docker
+wget https://github.com/kanchan-aawwss/react-js-project.git
+mkdir myreactjsfile
+yum install git
+cd myreactjsfile
+git init
+git remote add origin https://github.com/kanchan-aawwss/react-js-project.git
+git clone https://github.com/kanchan-aawwss/react-js-project.git
+cd
+docker build -t kanchan19042002/reactimagejs
+docker push kanchan19042002/reactimagejs
+
+mkdir my-react-project-repo
+docker build -t kanchan19042002/reactjsimage
